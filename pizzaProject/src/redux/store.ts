@@ -1,17 +1,11 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux'
-import thunk from 'redux-thunk'
-import orderReducer from './reducers/order/reducer'
-import selectReducer from './reducers/select/reducer'
+import { configureStore } from '@reduxjs/toolkit'
+import { selectPageSlice } from './reducers/select/selectPageSlice'
 
-const rootReducer = combineReducers({
-    selectPage: selectReducer,
-    orderPage: orderReducer
+export const store = configureStore({
+    reducer: {
+        selectPage: selectPageSlice
+    }
 })
 
-const store = createStore(rootReducer, applyMiddleware(thunk))
-
-export type StoreType = typeof store
-export type StateType = ReturnType<typeof store.getState>
-export type DispatchType = typeof store.dispatch
-
-export default store
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
