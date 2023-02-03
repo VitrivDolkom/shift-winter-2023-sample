@@ -15,16 +15,10 @@ export const selectPageSlice = createSlice({
     initialState,
     reducers: {
         fetchPizzas: (state, action: PayloadAction<IPizza[]>) => {
-            return {
-                ...state,
-                pizzas: action.payload
-            }
+            state.pizzas = action.payload
         },
         setPizzasLoaded: (state) => {
-            return {
-                ...state,
-                pizzasLoaded: true
-            }
+            state.pizzasLoaded = true
         },
         togglePizza: (state, action: PayloadAction<number>) => {
             if (state.selectedPizzas.includes(action.payload)) {
