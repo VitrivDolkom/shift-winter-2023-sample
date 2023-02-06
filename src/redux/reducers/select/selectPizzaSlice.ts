@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { IPizza } from '@utils/types/types'
-import { ISelectPageState } from './types'
-import { RootState } from '@redux/store'
+import { ISelectPizzaState } from './types'
 
-const initialState: ISelectPageState = {
+const initialState: ISelectPizzaState = {
     pizzas: [],
     categories: ['Рекомендуем', 'Без мяса', 'Сладкая', 'Акции', 'Напитки'],
     currentCategory: 'Рекомендуем',
@@ -11,17 +10,17 @@ const initialState: ISelectPageState = {
     selectedPizzas: []
 }
 
-export const selectPageSlice = createSlice({
+export const selectPizzaSlice = createSlice({
     name: 'selectPage',
     initialState,
     reducers: {
-        fetchPizzas: (state: RootState, action: PayloadAction<IPizza[]>) => {
+        fetchPizzas: (state, action: PayloadAction<IPizza[]>) => {
             state.pizzas = action.payload
         },
-        setPizzasLoaded: (state: RootState) => {
+        setPizzasLoaded: (state) => {
             state.pizzasLoaded = true
         },
-        togglePizza: (state: RootState, action: PayloadAction<number>) => {
+        togglePizza: (state, action: PayloadAction<number>) => {
             if (state.selectedPizzas.includes(action.payload)) {
                 state.selectedPizzas = state.selectedPizzas.filter((id: number) => id !== action.payload)
             }
@@ -30,3 +29,5 @@ export const selectPageSlice = createSlice({
         }
     }
 })
+
+export default selectPizzaSlice.reducer

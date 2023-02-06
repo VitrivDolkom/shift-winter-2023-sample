@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { selectPageSlice } from './reducers/select/selectPageSlice'
+import selectPizzaReducer from './reducers//select/selectPizzaSlice'
+import orderPizzaReducer from './reducers//select/selectPizzaSlice'
 
 export const store = configureStore({
     reducer: {
-        selectPage: selectPageSlice
+        selectPage: selectPizzaReducer,
+        orderPage: orderPizzaReducer
     }
 })
 

@@ -1,6 +1,6 @@
 import { IPizza } from '@utils/types/types'
 
-export interface ISelectPageState {
+export interface ISelectPizzaState {
     pizzas: IPizza[]
     categories: string[]
     currentCategory: string

@@ -28,7 +28,7 @@ const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }: IOrde
                     </span>
                     <OrderList success={success} pizzas={orderedPizzas} callbacks={callbacks} />
                     {success && <SuccessOrder />}
-                    {!success && <OrderForm onOrderSubmit={callbacks.createOrder} orderedPizzas={orderedPizzas} />}
+                    {success || <OrderForm onOrderSubmit={callbacks.createOrder} orderedPizzas={orderedPizzas} />}
                 </div>
             </div>
             <FooterComponent />

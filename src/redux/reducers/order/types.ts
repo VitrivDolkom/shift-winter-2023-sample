@@ -1,8 +1,8 @@
 import { IPizzaOrder } from '@utils/types/types'
 
-export interface IOrderPageState {
+export interface IOrderPizzaState {
     orderedPizzas: IPizzaOrder[]
-    success: boolean
+    successOrder: boolean
 }
 
 export interface IUser {
