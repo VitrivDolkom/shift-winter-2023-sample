@@ -17,9 +17,11 @@ export const selectPizzaSlice = createSlice({
         fetchPizzas: (state, action: PayloadAction<IPizza[]>) => {
             state.pizzas = action.payload
         },
+
         setPizzasLoaded: (state) => {
             state.pizzasLoaded = true
         },
+
         togglePizza: (state, action: PayloadAction<number>) => {
             if (state.selectedPizzas.includes(action.payload)) {
                 state.selectedPizzas = state.selectedPizzas.filter((id: number) => id !== action.payload)
