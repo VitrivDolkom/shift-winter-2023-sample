@@ -1,4 +1,0 @@
-export const GET_PIZZAS = 'GET_PIZZAS'
-export const SET_PIZZA_LOADED = 'SET_PIZZA_LOADED'
-export const TOGGLE_PIZZA = 'TOGGLE_PIZZA'
-export const SET_SINGLE_PIZZA = 'SET_SINGLE_PIZZA'

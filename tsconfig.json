@@ -18,11 +18,13 @@
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "module": "ESNext",
-        "moduleResolution": "Node",
+        "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        // store(redux-toolkit) implicitly has an any type
+        "noImplicitAny": false
     },
     "include": ["src"],
     "references": [
