@@ -60,4 +60,7 @@ export const orderPizzaSlice = createSlice({
     }
 })
 
+export const { setPizza, increasePizzaQuantity, decreasePizzaQuantity, removePizza, setPizzaSize, setPizzaCrust } =
+    orderPizzaSlice.actions
+
 export default orderPizzaSlice.reducer

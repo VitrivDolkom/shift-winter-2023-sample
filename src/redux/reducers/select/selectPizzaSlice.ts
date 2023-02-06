@@ -32,4 +32,6 @@ export const selectPizzaSlice = createSlice({
     }
 })
 
+export const { fetchPizzas, setPizzasLoaded, togglePizza } = selectPizzaSlice.actions
+
 export default selectPizzaSlice.reducer
