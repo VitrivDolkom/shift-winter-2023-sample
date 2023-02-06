@@ -1,0 +1,24 @@
+{
+    "semi": false,
+    "printWidth": 120,
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "tabWidth": 4,
+    "indentStyle": "space",
+    "useTabs": false,
+    "trailingComma": "none",
+    "importOrder": [
+        "^@components/(.*)$",
+        "^(\\.|\\.\\.)(\\.?/[a-zA-Z]+)+$",
+        "^@redux/(.*)$",
+        "^@mainTypes/(.*)$",
+        "^@assets/.*$",
+        "./s.module.css",
+        "s.css",
+        "^[./]"
+    ],
+    "importOrderSeparation": false,
+    "importOrderSortSpecifiers": true,
+    "importOrderCaseInsensitive": true,
+    "importOrderGroupNamespaceSpecifiers": true
+}
