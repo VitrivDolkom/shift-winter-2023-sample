@@ -1,3 +1,5 @@
+export type statusType = 'loading' | 'error'
+
 export interface IAction {
     type: string
     payload?: any

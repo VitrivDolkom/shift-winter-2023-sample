@@ -1,24 +1,27 @@
-import { IAction } from '@utils/types/types'
-import { connect } from 'react-redux'
-import { ThunkDispatch } from 'redux-thunk'
+import { useAppDispatch, useAppSelector } from '@utils/hooks/hooks'
 import SelectPizza from './SelectPizza'
-import { getPizzas, togglePizza } from '@redux/reducers/select/actions'
-import { StateType } from '@redux/store'
+import { fetchPizzas } from '@redux/reducers/select/asyncActions'
+import { togglePizza } from '@redux/reducers/select/selectPizzaSlice'
 
-const mapStateToProps = (state: StateType) => ({
-    pizzas: state.selectPage.pizzas,
-    categories: state.selectPage.categories,
-    currentCategory: state.selectPage.currentCategory,
-    isLoaded: state.selectPage.pizzasLoaded,
-    errorLoading: state.selectPage.errorLoading,
-    selectedPizzas: state.selectPage.selectedPizzas
-})
+const SelectPizzaContainer = () => {
+    const pizzas = useAppSelector((state) => state.selectPage.pizzas)
+    const categories = useAppSelector((state) => state.selectPage.categories)
+    const currentCategory = useAppSelector((state) => state.selectPage.currentCategory)
+    const selectedPizzas = useAppSelector((state) => state.selectPage.selectedPizzas)
+    const status = useAppSelector((state) => state.selectPage.status)
+    const dispatch = useAppDispatch()
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<StateType, void, IAction>) => ({
-    getPizzas: () => dispatch(getPizzas()),
-    togglePizza: (id: number) => dispatch(togglePizza(id))
-})
-
-const SelectPizzaContainer = connect(mapStateToProps, mapDispatchToProps)(SelectPizza)
+    return (
+        <SelectPizza
+            pizzas={pizzas}
+            categories={categories}
+            currentCategory={currentCategory}
+            status={status}
+            selectedPizzas={selectedPizzas}
+            getPizzas={() => dispatch(fetchPizzas())}
+            togglePizza={(id: number) => dispatch(togglePizza(id))}
+        />
+    )
+}
 
 export default SelectPizzaContainer

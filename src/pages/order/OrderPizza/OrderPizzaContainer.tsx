@@ -3,16 +3,6 @@ import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import { IOrderFormValues } from '../OrderForm/types'
 import OrderPizza from './OrderPizza'
-import {
-    decreasePizzaQuantity,
-    increasePizzaQuantity,
-    removePizzaOrder,
-    sendPizzaOrder,
-    setPizzaCrust,
-    setPizzaSize
-} from '@redux/reducers/order/actions'
-import { getSinglePizza } from '@redux/reducers/select/actions'
-import { StateType } from '@redux/store'
 
 const mapStateToProps = (state: StateType) => ({
     selectedPizzas: state.selectPage.selectedPizzas,

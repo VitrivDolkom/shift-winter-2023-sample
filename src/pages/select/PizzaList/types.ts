@@ -1,4 +1,4 @@
-import { IPizza } from '@utils/types/types'
+import { IPizza, statusType } from '@utils/types/types'
 
 export interface IPizzaCardProps {
     pizza: IPizza
@@ -10,5 +10,5 @@ export interface IPizzaListProps {
     pizzas: IPizza[]
     selectedPizzas: number[]
     togglePizza: (id: number) => void
-    isLoaded: boolean
+    status: statusType
 }

@@ -3,11 +3,11 @@ import PizzaCard from './PizzaCard'
 import { IPizzaListProps } from './types'
 import s from './s.module.css'
 
-const PizzaList = ({ pizzas, selectedPizzas, togglePizza, isLoaded }: IPizzaListProps) => {
+const PizzaList = ({ pizzas, selectedPizzas, togglePizza, status }: IPizzaListProps) => {
     return (
         <div className={s.list}>
             {pizzas.map((pizza) =>
-                !isLoaded ? (
+                status == 'loading' ? (
                     <PizzaCardSkeleton key={pizza.id} />
                 ) : (
                     <PizzaCard

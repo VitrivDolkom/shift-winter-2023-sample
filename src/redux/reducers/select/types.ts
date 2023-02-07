@@ -4,6 +4,6 @@ export interface ISelectPizzaState {
     pizzas: IPizza[]
     categories: string[]
     currentCategory: string
-    pizzasLoaded: boolean
+    status: string
     selectedPizzas: number[]
 }

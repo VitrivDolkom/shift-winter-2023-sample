@@ -7,9 +7,7 @@ import { ISelectPizzaProps } from './types'
 import s from './s.module.css'
 
 const SelectPizza = (props: ISelectPizzaProps) => {
-    const { getPizzas, togglePizza, pizzas, categories, currentCategory, isLoaded, selectedPizzas } = props
-
-    const a = 2
+    const { getPizzas, togglePizza, pizzas, categories, currentCategory, status, selectedPizzas } = props
 
     useEffect(() => {
         getPizzas()
@@ -26,7 +24,7 @@ const SelectPizza = (props: ISelectPizzaProps) => {
                         pizzas={pizzas}
                         togglePizza={togglePizza}
                         selectedPizzas={selectedPizzas}
-                        isLoaded={isLoaded}
+                        status={status}
                     />
                 </div>
             </div>
