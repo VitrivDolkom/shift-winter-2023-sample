@@ -19,7 +19,11 @@ const SelectPizzaContainer = () => {
             currentCategory={currentCategory}
             status={status}
             selectedPizzas={selectedPizzas}
-            getPizzas={() => status === statusType.ok || dispatch(fetchPizzas())}
+            getPizzas={() => {
+                if (status === statusType.toFetch) {
+                    dispatch(fetchPizzas())
+                }
+            }}
             togglePizza={(id: number) => dispatch(togglePizza(id))}
         />
     )

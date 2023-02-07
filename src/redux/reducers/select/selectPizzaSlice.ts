@@ -7,7 +7,7 @@ const initialState: ISelectPizzaState = {
     pizzas: [],
     categories: ['Рекомендуем', 'Без мяса', 'Сладкая', 'Акции', 'Напитки'],
     currentCategory: 'Рекомендуем',
-    status: statusType.ok,
+    status: statusType.toFetch,
     selectedPizzas: []
 }
 

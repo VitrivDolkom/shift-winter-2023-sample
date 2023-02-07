@@ -1,4 +1,5 @@
 export enum statusType {
+    toFetch = 'toFetch',
     loading = 'loading',
     error = 'error',
     ok = ''
