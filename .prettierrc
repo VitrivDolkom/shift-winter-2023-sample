@@ -13,8 +13,8 @@
         "^@redux/(.*)$",
         "^@mainTypes/(.*)$",
         "^@assets/.*$",
-        "./s.module.css",
-        "s.css",
+        "./s(tyle)?.module.s?css",
+        "s(tyle)?.s?css",
         "^[./]"
     ],
     "importOrderSeparation": false,

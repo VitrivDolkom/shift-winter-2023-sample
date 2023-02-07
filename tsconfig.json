@@ -6,7 +6,8 @@
             "@utils/*": ["src/utils/*"],
             "@redux/*": ["src/redux/*"],
             "@components/*": ["src/components/*"],
-            "@pages/*": ["src/pages/*"]
+            "@pages/*": ["src/pages/*"],
+            "@atoms/*": ["src/atoms/*"]
         },
         "target": "ESNext",
         "useDefineForClassFields": true,

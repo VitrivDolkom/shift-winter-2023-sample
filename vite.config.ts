@@ -10,7 +10,8 @@ export default defineConfig({
             '@utils': path.resolve(__dirname, './src/utils'),
             '@redux': path.resolve(__dirname, './src/redux'),
             '@components': path.resolve(__dirname, './src/components'),
-            '@pages': path.resolve(__dirname, './src/pages')
+            '@pages': path.resolve(__dirname, './src/pages'),
+            '@atoms': path.resolve(__dirname, './src/atoms')
         }
     },
     plugins: [react()]

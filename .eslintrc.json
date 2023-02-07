@@ -1,0 +1,39 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended"],
+    "overrides": [],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint"],
+    "rules": {
+        // suppress errors for missing 'import React' in files
+        "react/react-in-jsx-scope": "off",
+        // error on nested ternary
+        "no-nested-ternary": "error",
+        // () => { return smth } -> () => smth
+        "arrow-body-style": ["warn", "as-needed"],
+        // warn console.log()
+        "no-console": "warn",
+        // warn extra spaces
+        "no-trailing-spaces": "warn",
+        // configure quotes
+        "quotes": ["error", "single"],
+        "jsx-quotes": ["error", "prefer-double"],
+        // use const instead of let if its possible
+        "prefer-const": "error",
+        // spaces per tab
+        "indent": ["warn", 4],
+        // configure semi
+        // "semi": ["error", true],
+        // max length per line
+        "max-len": ["warn", 120],
+        // extra comma in object
+        "comma-dangle": ["error", "never"]
+    }
+}
