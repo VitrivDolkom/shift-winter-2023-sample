@@ -1,4 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@utils/hooks/hooks'
+import { statusType } from '@utils/types/types'
 import SelectPizza from './SelectPizza'
 import { fetchPizzas } from '@redux/reducers/select/asyncActions'
 import { togglePizza } from '@redux/reducers/select/selectPizzaSlice'
@@ -18,7 +19,7 @@ const SelectPizzaContainer = () => {
             currentCategory={currentCategory}
             status={status}
             selectedPizzas={selectedPizzas}
-            getPizzas={() => status === '' && dispatch(fetchPizzas())}
+            getPizzas={() => status === statusType.ok || dispatch(fetchPizzas())}
             togglePizza={(id: number) => dispatch(togglePizza(id))}
         />
     )

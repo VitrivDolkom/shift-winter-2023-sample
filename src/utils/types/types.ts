@@ -1,4 +1,8 @@
-export type statusType = 'loading' | 'error' | ''
+export enum statusType {
+    loading = 'loading',
+    error = 'error',
+    ok = ''
+}
 
 export interface IAction {
     type: string

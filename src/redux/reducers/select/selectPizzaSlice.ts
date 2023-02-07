@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { errorStatus, loadingStatus } from '@utils/helpers/constants'
+import { statusType } from '@utils/types/types'
 import { fetchPizzas } from './asyncActions'
 import { ISelectPizzaState } from './types'
 
@@ -7,7 +7,7 @@ const initialState: ISelectPizzaState = {
     pizzas: [],
     categories: ['Рекомендуем', 'Без мяса', 'Сладкая', 'Акции', 'Напитки'],
     currentCategory: 'Рекомендуем',
-    status: '',
+    status: statusType.ok,
     selectedPizzas: []
 }
 
@@ -27,14 +27,14 @@ export const selectPizzaSlice = createSlice({
     extraReducers(builder) {
         builder
             .addCase(fetchPizzas.pending, (state, action) => {
-                state.status = loadingStatus
+                state.status = statusType.loading
             })
             .addCase(fetchPizzas.fulfilled, (state, action) => {
-                state.status = ''
+                state.status = statusType.ok
                 state.pizzas = action.payload
             })
             .addCase(fetchPizzas.rejected, (state, action) => {
-                state.status = errorStatus
+                state.status = statusType.error
             })
     }
 })
