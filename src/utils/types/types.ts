@@ -1,4 +1,4 @@
-export type statusType = 'loading' | 'error'
+export type statusType = 'loading' | 'error' | ''
 
 export interface IAction {
     type: string

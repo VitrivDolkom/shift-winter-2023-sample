@@ -1,9 +1,9 @@
-import { IPizza } from '@utils/types/types'
+import { IPizza, statusType } from '@utils/types/types'
 
 export interface ISelectPizzaState {
     pizzas: IPizza[]
     categories: string[]
     currentCategory: string
-    status: string
+    status: statusType
     selectedPizzas: number[]
 }
