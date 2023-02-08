@@ -6,7 +6,7 @@ const SuccessOrder = () => (
         <div className={s.title}>Ваш заказ принят!</div>
         <img src={perez} alt="мега харош" />
         <div className={s.title}>
-                Доставим по указанному адресу <br />в течение ∞ минут
+            Доставим по указанному адресу <br />в течение ∞ минут
         </div>
     </div>
 )

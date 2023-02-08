@@ -18,8 +18,9 @@
         "no-nested-ternary": "error",
         // () => { return smth } -> () => smth
         "arrow-body-style": ["warn", "as-needed"],
-        // warn console.log()
+        // warn console.log() and debugger
         "no-console": "warn",
+        "no-debugger": "warn",
         // warn extra spaces
         "no-trailing-spaces": "warn",
         // configure quotes

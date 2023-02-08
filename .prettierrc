@@ -4,7 +4,6 @@
     "endOfLine": "lf",
     "singleQuote": true,
     "tabWidth": 4,
-    "indentStyle": "space",
     "useTabs": false,
     "trailingComma": "none",
     "importOrder": [

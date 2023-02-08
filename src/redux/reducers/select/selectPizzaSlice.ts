@@ -26,14 +26,14 @@ export const selectPizzaSlice = createSlice({
     },
     extraReducers(builder) {
         builder
-            .addCase(fetchPizzas.pending, (state, action) => {
+            .addCase(fetchPizzas.pending, (state) => {
                 state.status = statusType.loading
             })
             .addCase(fetchPizzas.fulfilled, (state, action) => {
                 state.status = statusType.ok
                 state.pizzas = action.payload
             })
-            .addCase(fetchPizzas.rejected, (state, action) => {
+            .addCase(fetchPizzas.rejected, (state) => {
                 state.status = statusType.error
             })
     }

@@ -24,7 +24,7 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
-        // store(redux-toolkit) implicitly has an any type
+        // store from redux-toolkit implicitly has an any type
         "noImplicitAny": false
     },
     "include": ["src"],
