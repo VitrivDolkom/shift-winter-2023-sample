@@ -1,14 +1,13 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IPizza } from '@utils/types/types'
+import axios from 'axios'
 
-export const pizzaApi = createApi({
-    reducerPath: 'pizzaApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://shift-winter-2023-backend.onrender.com/api.pizza' }),
-    endpoints: (builder) => ({
-        getPizzas: builder.query<IPizza[], string>({
-            query: () => '/'
-        })
-    })
+const BASE_URL = 'https://shift-winter-2023-backend.onrender.com/api/pizza'
+
+export const pizzaIstance = axios.create({
+    baseURL: BASE_URL,
+    headers: {
+        Accept: 'application/json'
+    }
 })
 
-export const { useGetPizzasQuery } = pizzaApi
+export const fetchPizzas = async () => await pizzaIstance.get<IPizza[]>('/')

@@ -35,6 +35,8 @@
         // max length per line
         "max-len": ["warn", 120],
         // extra comma in object
-        "comma-dangle": ["error", "never"]
+        "comma-dangle": ["error", "never"],
+        // round brackets with one function param
+        "arrow-parens": ["error", "always"]
     }
 }

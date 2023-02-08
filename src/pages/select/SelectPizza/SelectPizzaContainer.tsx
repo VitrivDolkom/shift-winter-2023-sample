@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@utils/hooks/hooks'
 import { statusType } from '@utils/types/types'
 import SelectPizza from './SelectPizza'
-import { fetchPizzas } from '@redux/reducers/select/asyncActions'
+import { fetchPizzasThunk } from '@redux/reducers/select/asyncActions'
 import { togglePizza } from '@redux/reducers/select/selectPizzaSlice'
 
 const SelectPizzaContainer = () => {
@@ -21,7 +21,7 @@ const SelectPizzaContainer = () => {
             selectedPizzas={selectedPizzas}
             getPizzas={() => {
                 if (status === statusType.toFetch) {
-                    dispatch(fetchPizzas())
+                    dispatch(fetchPizzasThunk())
                 }
             }}
             togglePizza={(id: number) => dispatch(togglePizza(id))}

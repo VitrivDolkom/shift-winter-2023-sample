@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { statusType } from '@utils/types/types'
-import { fetchPizzas } from './asyncActions'
+import { fetchPizzasThunk } from './asyncActions'
 import { ISelectPizzaState } from './types'
 
 const initialState: ISelectPizzaState = {
@@ -26,14 +26,14 @@ export const selectPizzaSlice = createSlice({
     },
     extraReducers(builder) {
         builder
-            .addCase(fetchPizzas.pending, (state) => {
+            .addCase(fetchPizzasThunk.pending, (state) => {
                 state.status = statusType.loading
             })
-            .addCase(fetchPizzas.fulfilled, (state, action) => {
+            .addCase(fetchPizzasThunk.fulfilled, (state, action) => {
                 state.status = statusType.ok
                 state.pizzas = action.payload
             })
-            .addCase(fetchPizzas.rejected, (state) => {
+            .addCase(fetchPizzasThunk.rejected, (state) => {
                 state.status = statusType.error
             })
     }
