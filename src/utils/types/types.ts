@@ -5,11 +5,6 @@ export enum statusType {
     ok = ''
 }
 
-export interface IAction {
-    type: string
-    payload?: any
-}
-
 export interface ICrust extends ISignature<number> {
     cheesy: number
     cheesySausage: number
@@ -36,7 +31,7 @@ export interface IPizza {
     }
 }
 
-export interface IPizzaOrder extends ISignature<IPizza | number | string> {
+export interface ISelectedPizza extends ISignature<IPizza | number | string> {
     pizza: IPizza
     quantity: number
     price: number

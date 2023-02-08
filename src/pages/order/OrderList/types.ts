@@ -1,14 +1,14 @@
-import { IPizzaOrder } from '@utils/types/types'
+import { ISelectedPizza } from '@utils/types/types'
 import { IOrderPizzaDispatchProps } from '../OrderPizza/types'
 
 export interface IOrderListProps {
-    pizzas: IPizzaOrder[]
+    pizzas: ISelectedPizza[]
     success: boolean
     callbacks: IOrderPizzaDispatchProps
 }
 
 export interface IOrderPizzaCardProps {
-    pizzaCard: IPizzaOrder
+    pizzaCard: ISelectedPizza
     success: boolean
     callbacks: IOrderPizzaDispatchProps
 }

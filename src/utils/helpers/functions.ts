@@ -1,6 +1,6 @@
-import { IPizzaOrder } from '@utils/types/types'
+import { ISelectedPizza } from '@utils/types/types'
 
-export const calculatePizzaPrice = (card: IPizzaOrder) => {
+export const calculatePizzaPrice = (card: ISelectedPizza) => {
     const crust = card.crust
     const size = card.size
     const quantity = card.quantity
@@ -11,4 +11,14 @@ export const calculatePizzaPrice = (card: IPizzaOrder) => {
 
     const price = (defaultPrice + crustPrice + sizePrice) * quantity
     return price
+}
+
+export const checkPizzaInCart = (arr: ISelectedPizza[], id: number) => {
+    arr.forEach((pizzaCard) => {
+        if (pizzaCard.pizza.id === id) {
+            return true
+        }
+    })
+
+    return false
 }

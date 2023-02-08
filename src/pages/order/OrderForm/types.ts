@@ -1,4 +1,4 @@
-import { IPizzaOrder } from '@utils/types/types'
+import { ISelectedPizza } from '@utils/types/types'
 
 export interface IFormSignature<T> {
     [key: string]: T
@@ -35,6 +35,6 @@ export interface IOrderFormErrors extends IFormSignature<string | undefined> {
 }
 
 export interface IOrderFormProps {
-    onOrderSubmit: (values: IOrderFormValues, orderedPizzas: IPizzaOrder[]) => void
-    orderedPizzas: IPizzaOrder[]
+    onOrderSubmit: (values: IOrderFormValues, orderedPizzas: ISelectedPizza[]) => void
+    orderedPizzas: ISelectedPizza[]
 }

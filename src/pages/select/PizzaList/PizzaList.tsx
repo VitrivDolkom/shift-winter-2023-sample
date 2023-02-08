@@ -1,4 +1,5 @@
-import { statusType } from '@utils/types/types'
+import { checkPizzaInCart } from '@utils/helpers/functions'
+import { ISelectedPizza, statusType } from '@utils/types/types'
 import PizzaCard from './PizzaCard'
 import { IPizzaListProps } from './types'
 import s from './s.module.css'
@@ -12,7 +13,7 @@ const PizzaList = ({ pizzas, selectedPizzas, togglePizza, status }: IPizzaListPr
                     key={pizza.id}
                     togglePizza={togglePizza}
                     pizza={pizza}
-                    isSelected={selectedPizzas.indexOf(pizza.id) !== -1}
+                    isSelected={checkPizzaInCart(selectedPizzas, pizza.id)}
                 />
             ))}
     </div>

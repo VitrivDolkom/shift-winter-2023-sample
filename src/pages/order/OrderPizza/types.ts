@@ -1,4 +1,4 @@
-import { IPizzaOrder } from '@utils/types/types'
+import { ISelectedPizza } from '@utils/types/types'
 import { IOrderFormValues } from '../OrderForm/types'
 
 export interface IOrderPizzaDispatchProps {
@@ -8,12 +8,11 @@ export interface IOrderPizzaDispatchProps {
     setPizzaCrust: (id: number, crust: string) => void
     setPizzaSize: (id: number, size: string) => void
     removePizzaOrder: (id: number) => void
-    createOrder: (form: IOrderFormValues, pizzas: IPizzaOrder[]) => void
+    createOrder: () => void
 }
 
 export interface IOrderPizzaProps {
-    selectedPizzas: number[]
-    orderedPizzas: IPizzaOrder[]
+    selectedPizzas: ISelectedPizza[]
     callbacks: IOrderPizzaDispatchProps
     success: boolean
 }

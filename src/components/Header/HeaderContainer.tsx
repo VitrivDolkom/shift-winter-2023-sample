@@ -1,12 +1,8 @@
-import { connect } from 'react-redux'
-import HeaderComponent from './Header'
-import { IStateHeaderProps } from './types'
-import { StateType } from '@redux/store'
+import { useAppSelector } from '@utils/hooks/hooks'
+import Header from './Header'
 
-const mapStateToProps = (state: StateType): IStateHeaderProps => ({
-    orderQuantity: state.selectPage.selectedPizzas.length
-})
-
-const HeaderContainer = connect(mapStateToProps)(HeaderComponent)
+const HeaderContainer = () => (
+    <Header orderQuantity={useAppSelector((state) => state.pizzaCart.selectedPizzaList.length)} />
+)
 
 export default HeaderContainer

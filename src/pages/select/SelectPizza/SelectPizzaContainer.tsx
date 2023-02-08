@@ -1,15 +1,15 @@
 import { useAppDispatch, useAppSelector } from '@utils/hooks/hooks'
 import { statusType } from '@utils/types/types'
 import SelectPizza from './SelectPizza'
-import { fetchPizzasThunk } from '@redux/reducers/select/asyncActions'
-import { togglePizza } from '@redux/reducers/select/selectPizzaSlice'
+import { fetchPizzasThunk } from '@redux/pizzaCartSlice/actions/selectPage/actions'
+import { togglePizza } from '@redux/pizzaCartSlice/pizzaCartSlice'
 
 const SelectPizzaContainer = () => {
-    const pizzas = useAppSelector((state) => state.selectPage.pizzas)
-    const categories = useAppSelector((state) => state.selectPage.categories)
-    const currentCategory = useAppSelector((state) => state.selectPage.currentCategory)
-    const selectedPizzas = useAppSelector((state) => state.selectPage.selectedPizzas)
-    const status = useAppSelector((state) => state.selectPage.status)
+    const pizzas = useAppSelector((state) => state.pizzaCart.pizzaList)
+    const categories = useAppSelector((state) => state.pizzaCart.categories)
+    const currentCategory = useAppSelector((state) => state.pizzaCart.currentCategory)
+    const selectedPizzas = useAppSelector((state) => state.pizzaCart.selectedPizzaList)
+    const status = useAppSelector((state) => state.pizzaCart.status)
     const dispatch = useAppDispatch()
 
     return (
