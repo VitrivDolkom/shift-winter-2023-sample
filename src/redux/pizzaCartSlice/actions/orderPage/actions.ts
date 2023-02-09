@@ -1,18 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { calculatePizzaPrice } from '@utils/helpers/functions'
-import { IPizza } from '@utils/types/types'
-
-export const addPizzaToArray = (state, action: PayloadAction<IPizza>) => {
-    const pizzaPrice = action.payload.price.default
-
-    state.orderedPizzas.push({
-        pizza: action.payload,
-        quantity: 1,
-        crust: '',
-        size: 'small',
-        price: pizzaPrice
-    })
-}
 
 export const addAnotherPizza = (state, action: PayloadAction<number>) => {
     state.orderedPizzas.forEach((card) => {

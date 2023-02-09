@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 import { statusType } from '@utils/types/types'
 import {
     addAnotherPizza,
-    addPizzaToArray,
     changePizzaCrust,
     changePizzaSize,
     deletePizzaById,
@@ -25,7 +24,6 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         togglePizza: addOrRemovePizza,
-        setPizza: addPizzaToArray,
         increasePizzaQuantity: addAnotherPizza,
         decreasePizzaQuantity: removeOnePizza,
         removePizza: deletePizzaById,
@@ -47,14 +45,7 @@ const cartSlice = createSlice({
     }
 })
 
-export const {
-    togglePizza,
-    setPizza,
-    increasePizzaQuantity,
-    decreasePizzaQuantity,
-    removePizza,
-    setPizzaSize,
-    setPizzaCrust
-} = cartSlice.actions
+export const { togglePizza, increasePizzaQuantity, decreasePizzaQuantity, removePizza, setPizzaSize, setPizzaCrust } =
+    cartSlice.actions
 
 export default cartSlice.reducer
