@@ -21,5 +21,5 @@ export const fetchPizzasThunk = createAsyncThunk<IPizza[], undefined, { rejectVa
     async (_, { rejectWithValue }) =>
         await fetchPizzas()
             .then((response) => response.data)
-            .catch((err) => rejectWithValue(`Server Error${err}`))
+            .catch((err) => rejectWithValue(`Server Error ${err}`))
 )

@@ -1,10 +1,11 @@
 import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import { createOrderRequest } from '@utils/api/pizzaApi'
 import { calculatePizzaPrice } from '@utils/helpers/functions'
-import { IOrder } from '@utils/types/types'
+import { ISelectedPizza } from '@utils/types/types'
+import { IOrder } from '@redux/pizzaCartSlice/types'
 
 export const addAnotherPizza = (state, action: PayloadAction<number>) => {
-    state.selectedPizzaList.forEach((card) => {
+    state.selectedPizzaList.forEach((card: ISelectedPizza) => {
         if (card.pizza.id === action.payload) {
             card.quantity++
             card.price = calculatePizzaPrice(card)
@@ -13,7 +14,7 @@ export const addAnotherPizza = (state, action: PayloadAction<number>) => {
 }
 
 export const removeOnePizza = (state, action: PayloadAction<number>) => {
-    state.selectedPizzaList.forEach((card) => {
+    state.selectedPizzaList.forEach((card: ISelectedPizza) => {
         if (card.pizza.id === action.payload && card.quantity > 1) {
             card.quantity--
             card.price = calculatePizzaPrice(card)
@@ -31,7 +32,7 @@ export const changePizzaSize = (state, action: PayloadAction<{ id: number; size:
 }
 
 export const changePizzaCrust = (state, action: PayloadAction<{ id: number; crust: string }>) => {
-    state.selectedPizzaList.forEach((card) => {
+    state.selectedPizzaList.forEach((card: ISelectedPizza) => {
         if (card.pizza.id === action.payload.id) {
             card.crust = card.crust === action.payload.crust ? '' : action.payload.crust
             card.price = calculatePizzaPrice(card)
@@ -39,7 +40,7 @@ export const changePizzaCrust = (state, action: PayloadAction<{ id: number; crus
     })
 }
 
-export const createOrderThunk = createAsyncThunk<any, IOrder, { rejectValue: string }>(
+export const createOrderThunk = createAsyncThunk<Promise<void>, IOrder, { rejectValue: string }>(
     'orderPage/createOrder',
     async (order, { rejectWithValue }) => {
         await createOrderRequest(order)

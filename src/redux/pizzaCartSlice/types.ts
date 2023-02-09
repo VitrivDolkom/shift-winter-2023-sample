@@ -39,3 +39,10 @@ export interface IOrder {
     pizzas: IPizzaOrder[]
     details: IOrderForm
 }
+
+export interface IOrderResponse {
+    id: number
+    sum: number
+    pizzas: IPizza[]
+    order: IOrder
+}
