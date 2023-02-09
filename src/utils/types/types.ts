@@ -42,3 +42,4 @@ export interface ISelectedPizza extends ISignature<IPizza | number | string> {
 export interface ISignature<T> {
     [key: string]: T
 }
+

@@ -1,7 +1,8 @@
+import { IOrderFormValues } from '@pages/order/OrderForm/types'
 import { IPizza, ISelectedPizza } from '@utils/types/types'
+import { IOrderForm, IPizzaOrder } from '@redux/pizzaCartSlice/types'
 
 export const calculatePizzaPrice = (card: ISelectedPizza) => {
-    debugger
     const crust = card.crust
     const size = card.size
     const quantity = card.quantity
@@ -20,4 +21,30 @@ export const checkPizzaInCart = (arr: ISelectedPizza[], pizza: IPizza) => {
     }
 
     return false
+}
+
+export const configureOrder = (formValues: IOrderFormValues, pizzaList: ISelectedPizza[]) => {
+    const formData: IOrderForm = {
+        user: {
+            firstname: formValues.firstname,
+            lastname: formValues.lastname,
+            birthDate: formValues.birthDate,
+            registrationAddress: ''
+        },
+        address: {
+            city: formValues.city,
+            street: formValues.street,
+            house: formValues.house,
+            apartment: formValues.apartment,
+            comment: formValues.comment
+        }
+    }
+
+    const pizzasData: IPizzaOrder[] = pizzaList.map((card) => ({
+        id: card.pizza.id,
+        size: card.size,
+        crust: card.crust
+    }))
+
+    return { pizzas: pizzasData, details: formData }
 }

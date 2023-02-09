@@ -1,6 +1,8 @@
+import { configureOrder } from '@utils/helpers/functions'
 import { useAppDispatch, useAppSelector } from '@utils/hooks/hooks'
 import { IPizza } from '@utils/types/types'
 import OrderPizza from './OrderPizza'
+import { createOrderThunk } from '@redux/pizzaCartSlice/actions/orderPage/actions'
 import {
     decreasePizzaQuantity,
     increasePizzaQuantity,
@@ -23,8 +25,8 @@ const OrderPizzaContainer = () => {
                 setPizzaCrust: (id: number, crust: string) => dispatch(setPizzaCrust({ id, crust })),
                 setPizzaSize: (id: number, size: string) => dispatch(setPizzaSize({ id, size })),
                 removePizzaOrder: (pizza: IPizza) => dispatch(togglePizza(pizza)),
-                createOrder: () => {
-                    console.log('developing')
+                createOrder: (formValues, selectedPizzaList) => {
+                    dispatch(createOrderThunk(configureOrder(formValues, selectedPizzaList)))
                 }
             }}
         />

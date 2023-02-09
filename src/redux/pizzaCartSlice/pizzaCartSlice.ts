@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { statusType } from '@utils/types/types'
-import { addAnotherPizza, changePizzaCrust, changePizzaSize, removeOnePizza } from './actions/orderPage/actions'
+import {
+    addAnotherPizza,
+    changePizzaCrust,
+    changePizzaSize,
+    createOrderThunk,
+    removeOnePizza
+} from './actions/orderPage/actions'
 import { addOrRemovePizza, fetchPizzasThunk } from './actions/selectPage/actions'
 import { IPizzaCartState } from './types'
 
@@ -34,6 +40,9 @@ const cartSlice = createSlice({
             })
             .addCase(fetchPizzasThunk.rejected, (state) => {
                 state.status = statusType.error
+            })
+            .addCase(createOrderThunk.fulfilled, (state) => {
+                state.successOrder = true
             })
     }
 })

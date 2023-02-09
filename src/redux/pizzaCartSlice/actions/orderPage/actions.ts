@@ -1,5 +1,7 @@
-import { PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
+import { createOrderRequest } from '@utils/api/pizzaApi'
 import { calculatePizzaPrice } from '@utils/helpers/functions'
+import { IOrder } from '@utils/types/types'
 
 export const addAnotherPizza = (state, action: PayloadAction<number>) => {
     state.selectedPizzaList.forEach((card) => {
@@ -36,3 +38,12 @@ export const changePizzaCrust = (state, action: PayloadAction<{ id: number; crus
         }
     })
 }
+
+export const createOrderThunk = createAsyncThunk<any, IOrder, { rejectValue: string }>(
+    'orderPage/createOrder',
+    async (order, { rejectWithValue }) => {
+        await createOrderRequest(order)
+            .then((response) => response.data)
+            .catch((error) => rejectWithValue(`Server error ${error}`))
+    }
+)
