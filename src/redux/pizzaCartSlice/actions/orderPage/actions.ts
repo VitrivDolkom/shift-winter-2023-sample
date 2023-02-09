@@ -2,35 +2,41 @@ import { PayloadAction } from '@reduxjs/toolkit'
 import { calculatePizzaPrice } from '@utils/helpers/functions'
 
 export const addAnotherPizza = (state, action: PayloadAction<number>) => {
-    state.orderedPizzas.forEach((card) => {
-        if (card.id === action.payload) card.quantity++
+    state.selectedPizzaList.forEach((card) => {
+        if (card.pizza.id === action.payload) {
+            card.quantity++
+            card.price = calculatePizzaPrice(card)
+        }
     })
 }
 
 export const removeOnePizza = (state, action: PayloadAction<number>) => {
-    state.orderedPizzas.forEach((card) => {
-        if (card.id === action.payload) card.quantity--
+    state.selectedPizzaList.forEach((card) => {
+        if (card.pizza.id === action.payload && card.quantity > 1) {
+            card.quantity--
+            card.price = calculatePizzaPrice(card)
+        }
     })
 }
 
 export const deletePizzaById = (state, action: PayloadAction<number>) => {
-    state.orderedPizzas.filter((card) => card.pizza.id !== action.payload)
+    state.selectedPizzaList.filter((card) => card.pizza.id !== action.payload)
 }
 
 export const changePizzaSize = (state, action: PayloadAction<{ id: number; size: string }>) => {
-    state.orderedPizzas.forEach((card) => {
-        if (card.id === action.payload.id) {
-            card.price = calculatePizzaPrice(card)
+    state.selectedPizzaList.forEach((card) => {
+        if (card.pizza.id === action.payload.id) {
             card.size = action.payload.size
+            card.price = calculatePizzaPrice(card)
         }
     })
 }
 
 export const changePizzaCrust = (state, action: PayloadAction<{ id: number; crust: string }>) => {
-    state.orderedPizzas.forEach((card) => {
-        if (card.id === action.payload.id) {
-            card.price = calculatePizzaPrice(card)
+    state.selectedPizzaList.forEach((card) => {
+        if (card.pizza.id === action.payload.id) {
             card.crust = card.crust === action.payload.crust ? '' : action.payload.crust
+            card.price = calculatePizzaPrice(card)
         }
     })
 }

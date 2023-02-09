@@ -13,13 +13,13 @@ const OrderPizzaCard = ({ pizzaCard, success, callbacks }: IOrderPizzaCardProps)
         <div className={s.choice}>
             <ul className={s.crusts}>
                 <li
-                    className={[s.crust, pizzaCard.crust === 'cheesy' && s.current].join(' ')}
+                    className={[s.crust, pizzaCard.crust === 'cheesy' ? s.current : ''].join(' ')}
                     onClick={() => callbacks.setPizzaCrust(pizzaCard.pizza.id, 'cheesy')}
                 >
                     сыр. корка + {pizzaCard.pizza.price.crust?.cheesy} ₽
                 </li>
                 <li
-                    className={[s.crust, pizzaCard.crust === 'cheesySausage' && s.current].join(' ')}
+                    className={[s.crust, pizzaCard.crust === 'cheesySausage' ? s.current : ''].join(' ')}
                     onClick={() => callbacks.setPizzaCrust(pizzaCard.pizza.id, 'cheesySausage')}
                 >
                     сыр. соус + {pizzaCard.pizza.price.crust?.cheesySausage} ₽
@@ -27,19 +27,19 @@ const OrderPizzaCard = ({ pizzaCard, success, callbacks }: IOrderPizzaCardProps)
             </ul>
             <ul className={s.sized}>
                 <li
-                    className={[s.size, pizzaCard.size === 'small' && s.current].join(' ')}
+                    className={[s.size, pizzaCard.size === 'small' ? s.current : ''].join(' ')}
                     onClick={() => callbacks.setPizzaSize(pizzaCard.pizza.id, 'small')}
                 >
                     15 см + {pizzaCard.pizza.price.size.small} ₽
                 </li>
                 <li
-                    className={[s.size, pizzaCard.size === 'medium' && s.current].join(' ')}
+                    className={[s.size, pizzaCard.size === 'medium' ? s.current : ''].join(' ')}
                     onClick={() => callbacks.setPizzaSize(pizzaCard.pizza.id, 'medium')}
                 >
                     20 см + {pizzaCard.pizza.price.size.medium} ₽
                 </li>
                 <li
-                    className={[s.size, pizzaCard.size === 'large' && s.current].join(' ')}
+                    className={[s.size, pizzaCard.size === 'large' ? s.current : ''].join(' ')}
                     onClick={() => callbacks.setPizzaSize(pizzaCard.pizza.id, 'large')}
                 >
                     30 см + {pizzaCard.pizza.price.size.large} ₽
@@ -56,7 +56,7 @@ const OrderPizzaCard = ({ pizzaCard, success, callbacks }: IOrderPizzaCardProps)
                         +
                     </div>
                 </div>
-                <div onClick={() => callbacks.removePizzaOrder(pizzaCard.pizza.id)} className={s.remove}>
+                <div onClick={() => callbacks.removePizzaOrder(pizzaCard.pizza)} className={s.remove}>
                     x
                 </div>
             </div>
