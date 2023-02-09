@@ -5,11 +5,11 @@ const Categories = ({ categories, currentCategory }: ICategoriesProps) => {
     let classNames: string
 
     const categoriesBtns = categories.map((category, index) => {
-        classNames = [s.item, category === currentCategory && s.current].join(' ')
+        classNames = [s.item, category.id === currentCategory && s.current].join(' ')
 
         return (
             <div className={classNames} key={index}>
-                {category}
+                {category.title}
             </div>
         )
     })

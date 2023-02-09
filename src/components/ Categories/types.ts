@@ -1,4 +1,6 @@
+import { IPizzaCategory } from '@utils/types/types'
+
 export interface ICategoriesProps {
-    categories: string[]
-    currentCategory: string
+    categories: IPizzaCategory[]
+    currentCategory: number
 }

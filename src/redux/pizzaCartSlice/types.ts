@@ -1,9 +1,9 @@
-import { IPizza, ISelectedPizza, statusType } from '@utils/types/types'
+import { IPizza, IPizzaCategory, ISelectedPizza, statusType } from '@utils/types/types'
 
 export interface IPizzaCartState {
     pizzaList: IPizza[]
-    categories: string[]
-    currentCategory: string
+    categories: IPizzaCategory[]
+    currentCategory: number
     status: statusType
     selectedPizzaList: ISelectedPizza[]
     successOrder: boolean

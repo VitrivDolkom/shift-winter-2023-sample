@@ -1,26 +1,27 @@
 .list {
-	display: flex;
-	justify-content: space-between;
-	margin: 55px 0;
+  display: flex;
+  justify-content: space-around;
+  margin: 55px 0 0;
 }
 
 .item {
-	width: 135px;
-	height: 55px;
-	background: linear-gradient(0deg, #ECEEF6, #ECEEF6);
-	color: #151515;
-	font-size: 16px;
-	font-weight: 600;
-	border-radius: 45px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	transition: all .4s linear;
+  min-width: 135px;
+  padding: 0 19px;
+  height: 55px;
+  background: linear-gradient(0deg, #ECEEF6, #ECEEF6);
+  color: #151515;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .4s linear;
 }
 
 .item:hover,
 .item.current {
-	background: var(--orange);
-	color: white;
+  background: var(--orange);
+  color: white;
 }

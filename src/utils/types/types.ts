@@ -43,3 +43,7 @@ export interface ISignature<T> {
     [key: string]: T
 }
 
+export interface IPizzaCategory {
+    id: number
+    title: string
+}

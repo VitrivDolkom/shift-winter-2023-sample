@@ -12,8 +12,12 @@ import { IPizzaCartState } from './types'
 
 const initialState: IPizzaCartState = {
     pizzaList: [],
-    categories: ['Рекомендуем', 'Без мяса', 'Сладкая', 'Акции', 'Напитки'],
-    currentCategory: 'Рекомендуем',
+    categories: [
+        { id: 1, title: 'Все' },
+        { id: 2, title: 'Острые' },
+        { id: 3, title: 'Вегетарианские' }
+    ],
+    currentCategory: 1,
     status: statusType.toFetch,
     selectedPizzaList: [],
     successOrder: false
