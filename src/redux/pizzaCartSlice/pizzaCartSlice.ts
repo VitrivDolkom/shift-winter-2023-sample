@@ -43,6 +43,7 @@ const cartSlice = createSlice({
             })
             .addCase(createOrderThunk.fulfilled, (state) => {
                 state.successOrder = true
+                state.status = statusType.toFetch
             })
     }
 })
