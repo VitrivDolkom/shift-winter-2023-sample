@@ -1,5 +1,5 @@
 import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { createOrderRequest } from '@utils/api/pizzaApi'
+import { createOrderRequest } from '@utils/api/requests'
 import { calculatePizzaPrice } from '@utils/helpers/functions'
 import { ISelectedPizza } from '@utils/types/types'
 import { IOrder } from '@redux/pizzaCartSlice/types'

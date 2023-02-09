@@ -1,5 +1,5 @@
 import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { fetchPizzas } from '@utils/api/pizzaApi'
+import { fetchPizzas } from '@utils/api/requests'
 import { checkPizzaInCart } from '@utils/helpers/functions'
 import { IPizza, ISelectedPizza } from '@utils/types/types'
 
