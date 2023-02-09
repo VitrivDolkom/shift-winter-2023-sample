@@ -19,10 +19,6 @@ export const removeOnePizza = (state, action: PayloadAction<number>) => {
     })
 }
 
-export const deletePizzaById = (state, action: PayloadAction<number>) => {
-    state.selectedPizzaList.filter((card) => card.pizza.id !== action.payload)
-}
-
 export const changePizzaSize = (state, action: PayloadAction<{ id: number; size: string }>) => {
     state.selectedPizzaList.forEach((card) => {
         if (card.pizza.id === action.payload.id) {
