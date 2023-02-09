@@ -8,12 +8,6 @@ import { IOrderPizzaProps } from './types'
 import s from './s.module.css'
 
 const OrderPizza = ({ selectedPizzas, orderedPizzas, success, callbacks }: IOrderPizzaProps) => {
-    useEffect(() => {
-        for (let i = 0; i < selectedPizzas.length; i++) {
-            callbacks.getSinglePizza(selectedPizzas[i])
-        }
-    }, [])
-
     const pizzaQuantity = orderedPizzas.reduce((sum, card) => sum + card.quantity, 0)
     const pizzaPrice = orderedPizzas.reduce((sum, card) => sum + card.price, 0)
 

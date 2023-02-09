@@ -2,7 +2,6 @@ import { ISelectedPizza } from '@utils/types/types'
 import { IOrderFormValues } from '../OrderForm/types'
 
 export interface IOrderPizzaDispatchProps {
-    getSinglePizza: (id: number) => void
     increaseQuantity: (id: number) => void
     decreaseQuantity: (id: number) => void
     setPizzaCrust: (id: number, crust: string) => void

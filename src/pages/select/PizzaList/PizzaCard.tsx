@@ -26,7 +26,7 @@ const PizzaCard = ({ pizza, isSelected, togglePizza }: IPizzaCardProps) => {
             </div>
             <div className={s.footer}>
                 <div className="price">{pizza.price.default} ₽</div>
-                <div onClick={() => togglePizza(pizza.id)} className={[s.add, isSelected && 'selected'].join(' ')}>
+                <div onClick={() => togglePizza(pizza)} className={[s.add, isSelected ? 'selected' : ''].join(' ')}>
                     <img src={add} alt="добавить в корзину" />
                 </div>
             </div>

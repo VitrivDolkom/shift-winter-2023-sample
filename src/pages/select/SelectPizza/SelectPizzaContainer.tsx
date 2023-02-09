@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@utils/hooks/hooks'
-import { statusType } from '@utils/types/types'
+import { IPizza, statusType } from '@utils/types/types'
 import SelectPizza from './SelectPizza'
 import { fetchPizzasThunk } from '@redux/pizzaCartSlice/actions/selectPage/actions'
 import { togglePizza } from '@redux/pizzaCartSlice/pizzaCartSlice'
@@ -24,7 +24,7 @@ const SelectPizzaContainer = () => {
                     dispatch(fetchPizzasThunk())
                 }
             }}
-            togglePizza={(id: number) => dispatch(togglePizza(id))}
+            togglePizza={(pizza: IPizza) => dispatch(togglePizza(pizza))}
         />
     )
 }

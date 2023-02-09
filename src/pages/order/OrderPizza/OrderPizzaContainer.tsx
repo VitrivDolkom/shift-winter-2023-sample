@@ -17,9 +17,6 @@ const OrderPizzaContainer = () => {
             selectedPizzas={selectedPizzas}
             success={success}
             callbacks={{
-                getSinglePizza: (id: number) => {
-                    console.log('developing')
-                },
                 increaseQuantity: (id: number) => dispatch(increasePizzaQuantity(id)),
                 decreaseQuantity: (id: number) => dispatch(decreasePizzaQuantity(id)),
                 setPizzaCrust: (id: number, crust: string) => dispatch(setPizzaCrust({ id, crust })),
