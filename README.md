@@ -42,6 +42,7 @@ https://www.figma.com/file/KEm04VrjVNRAt15s4q7SeT/%5B%D0%A8%D0%98%D0%A4%D0%A2%5D
 -   **react-router-dom**
 -   **redux**
 -   **react-redux**
+-   **redux-tookit**
 -   **redux-thunk**
 -   **axios**
 -   **formik**
