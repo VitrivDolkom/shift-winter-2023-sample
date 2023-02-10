@@ -21,6 +21,7 @@
 
 1. Диаграмма действий - https://app.diagrams.net/#LactionDiagram.drawio.html
 2. Классовая диаграмма - https://app.diagrams.net/#LclassDiagram.drawio.html
+3. Диаграмма состояний - https://app.diagrams.net/?src=about#LstateDiagram.drawio.html
 
 ## ТЗ🔥:
 
