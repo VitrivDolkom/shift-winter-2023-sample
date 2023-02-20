@@ -1,0 +1,29 @@
+.errorWrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.error {
+	position: absolute;
+	top: -30px;
+	right: -50px;
+	background: #191F2C;
+	border-radius: 4px;
+	color: white;
+	font-size: 12px;
+	white-space: nowrap;
+	padding: 4px 8px;
+}
+
+.error:after {
+	content: '';
+	position: absolute;
+	transform: matrix(1, 0, 0, -1, 0, 0);
+	border: 7px solid transparent;
+	border-bottom: 10px solid #191F2C;
+	left: 0;
+	bottom: -14px;
+	width: 5px;
+	height: 7px;
+}

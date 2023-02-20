@@ -1,0 +1,35 @@
+.header {
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: transparent;
+	color: white;
+}
+
+.logo {
+	font-family: 'Bodoni MT';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: center;
+}
+
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	flex: 0 0 450px;
+}
+
+
+.link a {
+	color: white;
+	transition: all .4s linear;
+	font-size: 18px;
+}
+
+.link a:hover {
+	color: var(--orange);
+}

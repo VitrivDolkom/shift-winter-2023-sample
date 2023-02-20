@@ -1,0 +1,108 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  margin-top: 50px;
+}
+
+.imgWrapper {
+  height: 100%;
+}
+
+.imgWrapper img {
+  max-height: 100%;
+}
+
+.info {
+  flex: 0 1 200px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.quantityActions {
+  display: flex;
+  height: 40px;
+  justify-content: space-around;
+  background: #F5F5F5;
+  border-radius: 30px;
+}
+
+.quantityActions * {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove {
+  margin-left: 15px;
+}
+
+.remove,
+.increase,
+.decrease {
+  cursor: pointer;
+}
+
+.increase:hover,
+.decrease:hover {
+  background: #dfdfdf;
+  border-radius: 30px;
+}
+
+.decrease {
+  position: relative;
+}
+
+.decrease:after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 1px;
+  background-color: black;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+
+.choice {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 300px;
+}
+
+.sized,
+.crusts {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.crusts {
+  height: 80%;
+}
+
+.size,
+.crust {
+  padding: 7px;
+  cursor: pointer;
+  border: 2px #f5f5f5 solid;
+  border-radius: 20px;
+  transition: all .4s linear;
+}
+
+.size:hover,
+.crust:hover,
+.current {
+  background-color: #e2e2e2;
+}

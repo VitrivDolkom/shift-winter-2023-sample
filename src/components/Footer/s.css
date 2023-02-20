@@ -1,0 +1,28 @@
+.footer {
+	background-color: #191F2C;
+	color: white;
+	height: 120px;
+	flex: 0 0 auto;
+}
+
+.footer .box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+.footer .left {
+	display: flex;
+	flex-direction: column;
+}
+
+.footer .right {
+	display: flex;
+	flex: 0 0 200px;
+	justify-content: space-between;
+}
+
+.footer .right img {
+	cursor: pointer;
+}

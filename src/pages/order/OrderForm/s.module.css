@@ -1,0 +1,131 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.section input {
+  height: 40px;
+  padding: 0 19px;
+  background: #FFFFFF;
+  border: 1px solid #D4D4D4;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #4A4A4A;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  display: inline-flex;
+  font-size: 32px;
+  margin-bottom: 45px;
+}
+
+.comment {
+  margin-top: 20px;
+  width: 400px;
+  height: 100px;
+  padding: 10px 19px 0;
+  background: #FFFFFF;
+  border: 1px solid #D4D4D4;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #4A4A4A;
+  resize: none;
+}
+
+.flat {
+  width: 124px;
+}
+
+.house {
+  width: 76px;
+}
+
+.errorWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.error {
+  position: absolute;
+  top: -30px;
+  right: 0px;
+  background: #191F2C;
+  border-radius: 4px;
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 4px 8px;
+}
+
+.error:after {
+  content: '';
+  position: absolute;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  border: 7px solid transparent;
+  border-bottom: 10px solid #191F2C;
+  left: 0;
+  bottom: -14px;
+  width: 5px;
+  height: 7px;
+}
+
+.send {
+  margin-top: 70px;
+  width: 360px;
+  height: 70px;
+  background: #191F2C;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+
+
+.section input[type='checkbox'],
+.section label {
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+
+.mid {
+  width: 214px;
+  margin-left: 30px;
+}
+
+.little {
+  width: 76px;
+  margin-left: 30px;
+}
+
+.apartment {
+  width: 124px;
+  margin-left: 30px;
+}
